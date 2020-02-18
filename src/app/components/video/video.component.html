@@ -1,0 +1,62 @@
+<div class="box">
+  <div class="video-box">
+    <video
+      id="video"
+      #videoPlayer
+      width="{{ screenWidth }}"
+      height="{{ screenWidth * screenWidthHeightRatio }}"
+    ></video>
+    <div class="button-box">
+      <button class="btn btn-primary" id="record" (click)="getWebCamAccess()">
+        Give access to webcam
+      </button>
+
+      <button
+        class="btn btn-info"
+        id="unlock"
+        [disabled]="!videoPlaying"
+        (click)="loadModel()"
+      >
+        Load model
+      </button>
+
+      <button
+        class="btn btn-info"
+        id="unlock"
+        [disabled]="!videoPlaying"
+        (click)="recordSnapshots(true)"
+      >
+        Record images
+			</button>
+			
+			<button
+        class="btn btn-info"
+        id="unlock"
+        [disabled]="!videoPlaying"
+        (click)="recordSnapshots(false)"
+      >
+        Record images INVALID
+      </button>
+
+      <button
+        class="btn btn-info"
+        id="unlock"
+        [disabled]="!videoPlaying"
+        (click)="trainModel()"
+      >
+        Train
+      </button>
+
+      <button
+        class="btn btn-info"
+        id="unlock"
+        [disabled]="!videoPlaying"
+        (click)="verfieUser()"
+      >
+        Unlock
+      </button>
+
+      <h3 class="count" #countTime></h3>
+    </div>
+  </div>
+</div>
